@@ -1,0 +1,58 @@
+.header {
+  /* background-color: aqua; */
+  display: flex;
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+  
+  
+}
+.bgcolor{
+  background-color: black;
+  
+}
+
+/* form input[type="text"],
+input[type="email"] {
+    display: block;
+    padding: 10px 0;
+    margin: 15px 0;
+    border-radius: 5px;
+    width: 25%;
+}
+
+form input[type="submit"] {
+    display: block;
+    padding: 10px 0;
+    margin: 1px;
+    border: 1px solid transparent;
+    background: #3262ab;
+    color: white;
+    border-radius: 5px;
+    width: 25%;
+    cursor: pointer;
+    transition: all 1s;
+} */
+
+.searchbox{
+  width: 50%;
+  display: flex;
+  justify-content: end;
+
+}
+.loginButton{
+width: 50%;
+display: flex;
+justify-content: end;
+padding-right: 15px;
+}
+
+.ImageDesign{
+  width: 10%;
+
+
+}
+
+.productListContainer {
+  display: flex;
+}
+

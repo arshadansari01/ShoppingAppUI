@@ -1,0 +1,213 @@
+.cartPageHeader {
+    margin-left: 220px;
+    
+}
+
+.cartItem {
+    border-bottom: 2px solid #888888;;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+
+.empty-cart {
+    text-align: center;
+    border-bottom: 2px solid #888888;;
+    background-color: #f2f2f2;
+    padding-top: 100px;
+    height: 150px;
+}
+
+.cartPage {
+    display: flex;
+    margin-left: 200px;
+    margin-right: 120px;
+}
+
+.cartItems{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.pic{
+    width:125px;
+    height:150px;
+    background-color: transparent;
+}
+
+.PicAlign{
+        width:20%;
+        align-items: center;
+
+}
+.CartDetails   {
+    justify-content: center;
+    align-items: center;
+    padding:35px 10px 0 0;
+    
+    
+    display: flex;
+    flex-direction: row;
+}
+.Quantity{
+    width: 25px;
+    height: 30px;
+    text-align: center;
+    border: none;
+    vertical-align: middle;
+    background-color: transparent;
+}
+
+.Buttons{
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.ProductName{
+    width: 35%;
+
+}
+.Price{
+
+    width:25%;
+}
+
+
+.QuantityUpdater{
+    border: none;
+    font-size: 16px;
+    width: 30px;
+    height: 28px;
+    background-color:  rgb(240, 240, 240);
+    cursor: pointer;
+
+}
+    
+   
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.DeleteButtonContainer{
+    display: flex;
+    align-items: flex-end;
+  padding-right: 55px;
+  padding-bottom: 10px;
+    flex-direction: column;
+
+    
+}
+
+.DeleteButton{
+ 
+    
+    cursor: pointer;
+   margin-top: 10px;
+    background-color: #333333;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+
+}
+
+.PlaceOrder{
+margin-left: 25px;
+max-height: 325px;
+
+    background-color: #f5f5f5;
+   
+   }
+   
+
+.PlaceOrderButton{
+    margin:90px 0px 0px 0px;
+    width: 250px;
+
+        
+}
+.OrderDetails{
+    display: flex;
+    line-height: 50px;
+    flex-direction: column;
+   
+}
+
+.OrderDetails label {
+    padding-left: 10px;
+    border-bottom: 1px solid black;
+}   
+
+.OrderDetails span {
+    float: right;
+    padding-right: 10px;
+}   
+
+.deliveryCost {
+    color: #388e3c;
+}
+
+
+/* from here all css are for payment page */
+
+.PaymentSection {
+    border-radius: 5px;
+margin: 0px 500px 0px 500px;
+background-color: #f2f2f2;
+padding: 20px;
+display: flex;
+flex-direction: column;
+width: 25%;    
+
+}
+
+.cardExpiry{
+    display: flex;
+}
+
+
+.cardExpiry input{
+    margin-right: 10px;
+    text-align: center;
+}
+.paymentPageHeader{
+border-radius: 5px;
+margin: 0px 500px 0px 500px;
+
+padding: 20px;
+
+}
+
+.paymentButton {
+    margin-top: 10px;
+    background-color: #333333;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    width: 55%;
+    color: white;
+}
+
+/* order page css */
+
+.orderPage {
+    margin-left: 150px;
+}
+
+.orderPageHeader {
+    margin-left: 220px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.logout {
+    padding: 15px 40px 0 0;
+}
