@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { ValidateMobileNumber, EMAIL_ID_REGEX } from "../../util/ApplicationUtil";
+import { ValidateMobileNumber, EMAIL_ID_REGEX, generateHeaders } from "../../util/ApplicationUtil";
 import './SignUpForm.css';
+import { signUp } from "../../util/globalUrl";
 
 
 function SignUpForm() {
@@ -36,14 +37,7 @@ function SignUpForm() {
             "password":password,
             "mobileNumber": mobileno
         };
-        fetch("http://localhost:9000/user", {
-            "method": "POST",
-            "body": JSON.stringify(body),
-            "headers": {
-                'Content-Type': 'application/json'
-            }
-
-        })
+        fetch(signUp,generateHeaders('POST',body))
             .then(function (response) {
                 return response.json();
             })

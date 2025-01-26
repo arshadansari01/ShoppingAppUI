@@ -1,4 +1,5 @@
 import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import React, {useState} from 'react';
 import LoginForm from './components/ui/LoginForm';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -9,6 +10,8 @@ import ProductContainer from './components/ui/ProductContainer';
 import Payment from './components/Payment';
 import Shipment from './components/Shipment';
 import Dashboard from './components/Dashboard';
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap.js"
 
 function App() {
 

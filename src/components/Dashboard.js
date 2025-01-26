@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { fetchUserId } from "../util/ApplicationUtil";
 import './Cart.css';
+import { useNavigate } from "react-router-dom";
+import Navbar from "./ui/Navbar";
 
 function Dashboard() {
     const cartItems = [];
+    const navigate = useNavigate();
     const [orders, setOrders] = useState([]);
     useEffect(function () {
         fetch("http://localhost:9000/order/getOrder?userId=" + fetchUserId())
@@ -15,12 +18,13 @@ function Dashboard() {
     }, [])
 
     function logout() {
-        document.cookie = "userId=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        window.location.href = "/";
+        localStorage.removeItem('auth-token');
+        navigate('/');
     }
 
 
     return <React.Fragment>
+       <Navbar/> 
         <div className="orderPage">
             <div className="orderPageHeader">
                 <div> <h1>My Orders</h1></div>

@@ -1,63 +1,126 @@
-
-
-
-
 .productContainer {
     border: 2px solid #ccc;
     background-color: white;
-    
-    
+
+
     width: 20%;
     border-radius: 5px;
-    margin:10px 10px 0 10px;
-    
+    margin: 10px 10px 0 10px;
+
 
 }
 
-.productContainer:hover{
-    -webkit-box-shadow: 6px 9px 14px -5px rgba(0,0,0,0.75);
-    -moz-box-shadow: 6px 9px 14px -5px rgba(0,0,0,0.75);
-    box-shadow: 6px 9px 14px -5px rgba(0,0,0,0.75);
+.productContainer:hover {
+    -webkit-box-shadow: 6px 9px 14px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 9px 14px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 9px 14px -5px rgba(0, 0, 0, 0.75);
 }
-.productImage{
+
+.productImage {
     width: 95%;
-
-    min-height: 300px;  
-    
-   
+    min-height: 300px;
     display: block;
-  margin-left: auto;
-  margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
-.productDescription{
+.productDescription {
     text-align: center;
     display: flex;
     flex-direction: column;
-    
+
 }
 
-.addtoCartButton{
+.updateDeleteButton {
 
     border: none;
-    padding: 10px ;
-    font-size:17px;
+    padding: 10px;
+    font-size: 17px;
     border-radius: 4px;
     cursor: pointer;
-    text-align: center;
 
 
 }
-.addtoCartButton:hover{
+
+.updateDeleteButton:hover {
     background-color: #333333;
-    color:white;
+    color: white;
 
 }
-.addtoCartButtonContainer{
-    padding:10px 0px 10px 0px;
+
+.updateDeleteContainer {
+    padding: 10px 0px 10px 0px;
     display: flex;
+    justify-content: space-around;
+}
+
+.hidden-popup {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+
+}
+
+.showPopUp {
+
+    width: 500px;
+    height: 590px;
+    position: fixed;
+    left: 35%;
+    top: 20%;
+    
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: black;
 }
 
 
+.UpsertFormAlignment{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border: 3px solid grey;
+  
+    opacity: 100000;
+    background-color: white;
+    z-index: 1;
+}
+
+.input-box{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size:16px;
+  
+}
+
+.input-button {
+    width: 100%;
+    background-color: #333333;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size:16px;
+  }
+
+  .addtoCartButton{
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+  }
+
+  .p-7{
+    padding: 7px;
+  }

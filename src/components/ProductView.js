@@ -1,11 +1,30 @@
-import React, { isValidElement } from 'react';
-import { fetchUserId } from '../util/ApplicationUtil';
+import React, { useState } from 'react';
+import { fetchUserId, generateHeaders } from '../util/ApplicationUtil';
 import './ProductView.css'
-
+import AddProducts from './ui/AddProducts';
+import { deleteProduct } from '../util/globalUrl';
 
 
 function ProductView(props) {
-    const { url, name, price, ratings } = props;
+    const { url, name, price, ratings, categoryName, productId, setProducts } = props;
+
+    const [showPopUp, setShowPopUp] = useState("hidden-popup");
+    // updatting the show popup value as per the props value provided
+    function redirectUpdatePage() {
+        setShowPopUp("showPopUp");
+    }
+
+    function closePopup() {
+        setShowPopUp("hidden-popup");
+    }
+
+    async function deleteSelectedProduct() {
+        const response = await fetch(deleteProduct + '?id=' + productId, generateHeaders("DELETE"))
+        if (response.status === 204) {
+            setProducts((initialProduct)=> initialProduct.filter(item => item.productId !== productId));
+            alert("Product Deleted Successfully");
+        }
+    }
 
     function redirectCartPage() {
         const body = {
@@ -17,15 +36,17 @@ function ProductView(props) {
                 "imageUrl": url,
                 "productRating": ratings,
                 "brandName": props.brandName,
-                "productId": props.productId
-            }] 
+                "productId": productId
+            }]
 
-        }             
+        }
         fetch("http://localhost:9000/cart/addtocart", {
             "method": "POST",
             "body": JSON.stringify(body),
             "headers": {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                // 'Authorization': `Bearer ${authToken}`, // Add the token here,
+
             }
         })
             .then(function (response) {
@@ -43,6 +64,13 @@ function ProductView(props) {
 
     return (
         <React.Fragment>
+            <div className={showPopUp} >
+
+                <AddProducts productId={productId} name={name} url={url} price={price} ratings={ratings} buttonName="Update"
+                    categoryName={categoryName} closePopup={closePopup} setProducts={setProducts} />
+
+            </div>
+
 
             <div className='productContainer'>
                 <img className='productImage' src={url} />
@@ -52,13 +80,17 @@ function ProductView(props) {
                     <label>Ratings {ratings}</label>
                 </div>
 
-                <div className='addtoCartButtonContainer'>
-                    <input className='addtoCartButton' type="button" onClick={redirectCartPage} value="Add to Cart" />
+                <div className='p-7'>
+                    <button type="button" className="addtoCartButton btn btn-outline-primary" onClick={redirectCartPage}>Add to Cart</button>
+                </div>
 
+                <div className='updateDeleteContainer'>
+                    <button className='updateDeleteButton btn btn-secondary' type="button" onClick={redirectUpdatePage}> Update </button>
+                    <button className='updateDeleteButton btn btn-danger' type="button" onClick={deleteSelectedProduct}> Delete </button>
 
                 </div>
-            </div>
 
+            </div>
 
 
         </React.Fragment>

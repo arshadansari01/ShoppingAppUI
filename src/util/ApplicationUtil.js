@@ -20,6 +20,22 @@ function fetchUserId() {
 
 const EMAIL_ID_REGEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-export {
-    ValidateMobileNumber, EMAIL_ID_REGEX, fetchUserId
+function generateHeaders(methodType, methodBody) {
+    const authToken = localStorage.getItem("auth-token");
+    return {
+        "method": methodType,
+        "headers": {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+        },
+        "body": JSON.stringify(methodBody),
+    }
 }
+
+
+
+
+export {
+    ValidateMobileNumber, EMAIL_ID_REGEX, fetchUserId, generateHeaders
+}
+

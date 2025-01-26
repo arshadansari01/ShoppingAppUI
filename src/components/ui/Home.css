@@ -29,8 +29,9 @@ cursor: pointer;
 
 
 .username {
-    padding-top: 18px;
-    margin-right: 50px;
+    color: white;
+    padding-top: 9px;
+    margin-left: 50px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -44,7 +45,6 @@ cursor: pointer;
 
 .categoryName {
     width: 10%;
-    height: 50px;
     color: white;
     justify-content: center;
     background-color: white;
@@ -55,6 +55,27 @@ cursor: pointer;
     border: none;
     border-radius: 4px;
     display: flex;
-    padding-top: 25px;
     cursor: pointer;
 }
+/* 
+
+body {
+
+    background-color: #888888;
+  } */
+
+
+  .logo {
+    font-family: 'Trebuchet MS';
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    font-size: 25px;
+    padding: 4px;
+    border: solid 3px #f5f5f5;
+    color: white;
+    position: absolute;
+    top: 5px;
+  }
